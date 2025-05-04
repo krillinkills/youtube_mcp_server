@@ -1,26 +1,24 @@
-# YouTube Video Top Search MCP
+# 📺 YouTube MCP Server
 
-## This project implements a **Model Control Protocol (MCP)** server that allows clients to query for the top YouTube videos based on a search term (e.g., product or ingredient name). It fetches the most viewed videos from YouTube and provides details such as video title, URL, and view count.
+A FastMCP-powered API server that fetches the top YouTube videos for any given search query, sorted by view count. This server uses the YouTube Data API v3 and is built to plug into any AI or automation pipeline requiring popular video content insights.
 
-## Features
+## 🚀 Features
 
-- Search YouTube for top videos based on a keyword.
-- Retrieve video details including title, URL, and view count.
-- Runs as an MCP server with SSE (Server-Sent Events) transport.
-- Supports proxy configuration for YouTube Transcript API (optional).
+- Search YouTube for videos using a keyword
+- Returns `videoId`, `title`, and `viewCount` for each result
+- Fetches up to 100 videos per query (adjustable)
+- Built with [FastMCP](https://github.com/ai-compound/fastmcp) for LLM/agent-friendly usage
 
 ---
 
-## Requirements
+## 🔧 Requirements
 
-- Python 3.9+
-- Dependencies:
-  - `google-api-python-client`
-  - `pydantic`
-  - `python-dotenv`
-  - `mcp`
-    Install dependencies:
+- Python 3.8+
+- YouTube Data API Key
+- `fastmcp`, `google-api-python-client`
+
+### 📦 Install dependencies
 
 ```bash
-pip install google-api-python-client pydantic python-dotenv mcp
+pip install fastmcp google-api-python-client
 ```
